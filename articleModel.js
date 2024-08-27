@@ -1,9 +1,9 @@
-// articleModel.js
+
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Definir el esquema del artículo
+
 const articleSchema = new Schema({
     title: {
         type: String,
@@ -24,7 +24,7 @@ const articleSchema = new Schema({
     }
 });
 
-// Crear el modelo basado en el esquema
+
 const Article = mongoose.model('Article', articleSchema);
 
 module.exports = Article;

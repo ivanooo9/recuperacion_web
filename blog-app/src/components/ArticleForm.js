@@ -1,4 +1,4 @@
-// src/components/ArticleForm.js
+
 import React, { useState } from 'react';
 
 const ArticleForm = ({ onArticleCreated }) => {
@@ -9,14 +9,14 @@ const ArticleForm = ({ onArticleCreated }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        // Crear un objeto con los datos del artículo
+
         const newArticle = {
             title,
             content,
             author
         };
 
-        // Enviar los datos al backend utilizando fetch
+
         const response = await fetch('http://localhost:5000/articles', {
             method: 'POST',
             headers: {
@@ -27,8 +27,8 @@ const ArticleForm = ({ onArticleCreated }) => {
 
         if (response.ok) {
             const createdArticle = await response.json();
-            onArticleCreated(createdArticle); // Actualizar la lista de artículos
-            setTitle('');  // Limpiar el formulario
+            onArticleCreated(createdArticle); 
+            setTitle('');  
             setContent('');
             setAuthor('');
         } else {

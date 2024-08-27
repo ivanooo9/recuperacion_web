@@ -2,7 +2,7 @@ const express = require('express');
 const Article = require('../models/articleModel');
 const router = express.Router();
 
-// Crear artículo
+
 router.post('/', async (req, res) => {
     try {
         const article = new Article(req.body);
@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-// Leer artículos
+
 router.get('/', async (req, res) => {
     try {
         const articles = await Article.find();
@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Actualizar artículo
+
 router.put('/:id', async (req, res) => {
     try {
         const article = await Article.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -34,7 +34,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-// Eliminar artículo
+
 router.delete('/:id', async (req, res) => {
     try {
         const article = await Article.findByIdAndDelete(req.params.id);

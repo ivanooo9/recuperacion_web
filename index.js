@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
     res.send('Servidor Express funcionando');
 });
 
-// Ruta para crear un nuevo artículo
+
 app.post('/articles', async (req, res) => {
     try {
         const newArticle = new Article(req.body);
@@ -29,7 +29,7 @@ app.post('/articles', async (req, res) => {
     }
 });
 
-// Ruta para obtener todos los artículos
+
 app.get('/articles', async (req, res) => {
     try {
         const articles = await Article.find();
@@ -39,7 +39,7 @@ app.get('/articles', async (req, res) => {
     }
 });
 
-// Ruta para actualizar un artículo por ID
+
 app.put('/articles/:id', async (req, res) => {
     try {
         const updatedArticle = await Article.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -52,7 +52,7 @@ app.put('/articles/:id', async (req, res) => {
     }
 });
 
-// Ruta para eliminar un artículo por ID
+
 app.delete('/articles/:id', async (req, res) => {
     try {
         const deletedArticle = await Article.findByIdAndDelete(req.params.id);
